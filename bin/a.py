@@ -3,29 +3,19 @@ banjonborno = ['ক','খ','গ','ঘ','ঙ','চ','ছ','জ','ঝ','ঞ','ট'
 Sorborno_kar = ['া','ি','ী','ু','ূ','ৃ','ৄ','ৢ','ৣ','ে','ৈ','ো','ৌ']
 Soeborno_IPA = {'অ':'ɔ','আ':'ɐ','অ্যা':'æ','এ':'æ','ই':'i','ঈ':'i', 'উ':'u', 'ঊ':'u','এ':'e', 'ও':'o', 'অ':'o'}
 Special_word_IPA = {'ঁ':'◌̃' , 'ঃ':'h', 'ঃ':'ɦ','ং':'ŋ'}
-banjonborno_IPA = {'ঢ়':'ɽʱ','ঞ':'ɲ','ব':'b','ভ':'β','দ':'d','ধ':'dʱ', 
-                   'ড': 'ɖ', 'ঢ':'ɖʱ','জ':'z','য':'z','ঝ':'dʒʱ','গ':'ɡ', 
-                   'ঘ':'ɡʱ','হ':'ɦ','ক':'k','খ':'kʰ','ক্ষ':'kʰ','ল':'l',
-                   'ম':'m','ন':'n','ণ':'n','ঙ':'ŋ','প':'p','ফ':'ɸ', 
+banjonborno_IPA = {'ক':'k','খ':'kʰ','গ':'ɡ','ঘ':'ɡʱ','ঢ়':'ɽʱ','ঞ':'ɲ','ব':'b','ভ':'β','দ':'d','ধ':'dʱ', 
+                   'ড': 'ɖ', 'ঢ':'ɖʱ','জ':'z','য':'z','ঝ':'dʒʱ','হ':'ɦ','ক্ষ':'kʰ','ল':'l',
+                   'ম':'m','ন':'n','ণ':'n','ঙ':'ŋ','প':'pɔ','ফ':'ɸ', 
                    'র':'r','ড়':'ɽ','স':'s','শ':'ʃ','ষ':'ʃ','স':'ʃ','ত':'t',
                    'ৎ':'t','থ':'tʰ','ট':'ʈ','ঠ':'ʈʰ','চ':'tʃ','ছ':'tʃʰ','য়':'j',
                    'ও': 'w','উ':'w', 'ণ': 'ɳ','য':'z','জ':'z'}
+fola = []
 
-soroborno_added = {'িন':'nɪ'}
-def combine(a,b):
-    return soroborno_added[a+b]
-
-word = 'নিলয়'
-ans = ''
-previous = ''
-for i in word:
-    okkhor = i
-    if i in Sorborno_kar:
-        okkhor = combine(i,previous)
-        ans = ans[:-1]
-    else:
-        print(i)
-        okkhor = banjonborno_IPA[i]
-    ans += okkhor
-    previous = i
-print(ans)
+# ক with soroborno..
+banjonborno_with_soroborno = {}
+for i in Sorborno_kar:
+    banjonborno_with_soroborno['ক' + i] = 'hi'
+for i in banjonborno:
+    banjonborno_with_soroborno['ক' + i] = 'hi'
+print(banjonborno_with_soroborno)
+banjonborno_with_soroborno['কা'] = 'kɐ'
