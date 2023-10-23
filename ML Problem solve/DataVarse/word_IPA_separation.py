@@ -4,7 +4,7 @@ X = dataset.iloc[:,0]
 y = dataset.iloc[:,-1]
 tem = []
 word = {}
-odd_letter = [',' , '.' , '।' ]
+odd_letter = [',' , '.' , '।',')' '(']
 for i in range(0,len(X)):
     tem.append([X[i].split(' ') , y[i].split(' ')])
 def clean(s):
@@ -25,5 +25,5 @@ for i in tem:
 tem = []
 for i in word:
     tem.append([i,word[i]])
-df = pd.DataFrame(tem)
-df.to_csv('Word_IPA.csv')
+# df = pd.DataFrame(tem)
+# df.to_csv('Word_IPA.csv')
